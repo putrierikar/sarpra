@@ -15,10 +15,33 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SoS',
       theme: ThemeData(
-        fontFamily: 'Sofia Pro',
         primarySwatch: Colors.pink,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.pink,
+        ),
+        fontFamily: 'Poppins',
+        textTheme: TextTheme(
+          headline4: GoogleFonts.poppins(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontSize: 25,  
+            letterSpacing: 1,
+          ),
+          bodyText2: GoogleFonts.poppins(
+            color: Colors.grey,
+            fontSize: 18,
+            height: 0.10,
+          ),
+          button: GoogleFonts.poppins(
+            color: Colors.white,
+            fontSize: 18,
+            letterSpacing: 1,
+          ),
+          bodyText1: GoogleFonts.poppins(
+            color: Colors.pink,
+            fontSize: 18,
+            letterSpacing: 1,
+          ),
         ),
       ),   
       home: MyHomePage(),
