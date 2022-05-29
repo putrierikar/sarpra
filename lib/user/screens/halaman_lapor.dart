@@ -34,7 +34,7 @@ class _HalamanLaporState extends State<HalamanLapor> {
 
 
   Widget buildContent() => Container(
-    padding: EdgeInsets.only(top: 50, left: 50, right: 70),
+    padding: EdgeInsets.only(top: 40, left: 50, right: 70),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
