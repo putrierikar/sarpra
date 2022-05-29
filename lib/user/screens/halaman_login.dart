@@ -14,7 +14,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
       body: ListView(
         children: <Widget>[
           buildTop(),
-          
+          buildContent(),
         ],
       ),
     );
@@ -29,4 +29,29 @@ class _HalamanLoginState extends State<HalamanLogin> {
       fit: BoxFit.cover,
     ), 
   );
+
+
+  Widget buildContent() => Container(
+    padding: EdgeInsets.only(top: 20, left: 50),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Selamat Datang di Sobat Sarpra!',
+          style: Theme.of(context).textTheme.headline3,
+        ),
+        SizedBox(height: 40,),
+        Text(
+          'Kamu menemukan fasilitas di sekolah yang rusak?',
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+        SizedBox(height: 30,),
+        Text(
+          'Laporin ke Sobat Sarpra aja, yuk!',
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+      ],
+    ),
+  );
+
 }
