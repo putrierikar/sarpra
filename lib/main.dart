@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sarpra/screen/screens.dart';
+import 'package:sarpra/user/user_screens.dart';
 
 void main() {
   runApp(const MyApp());
