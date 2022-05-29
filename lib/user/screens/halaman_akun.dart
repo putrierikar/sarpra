@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
+class HalamanAkun extends StatefulWidget {
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HalamanAkun> createState() => _HalamanAkunState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HalamanAkunState extends State<HalamanAkun> {
 
   int _selectedIndex = 0;
 

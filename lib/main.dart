@@ -21,6 +21,12 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Poppins',
         textTheme: TextTheme(
+          headline3: GoogleFonts.poppins(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,  
+            letterSpacing: 1,
+          ),
           headline4: GoogleFonts.poppins(
             color: Colors.white,
             fontWeight: FontWeight.w500,
@@ -44,7 +50,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),   
-      home: MyHomePage(),
+      home: //HalamanAkun(),
+      HalamanLogin(),
     );
   }
 }
