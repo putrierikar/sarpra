@@ -33,6 +33,12 @@ class MyApp extends StatelessWidget {
             fontSize: 25,  
             letterSpacing: 1,
           ),
+          headline5: GoogleFonts.poppins(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 40,  
+            letterSpacing: 1,
+          ),
           bodyText2: GoogleFonts.poppins(
             color: Colors.grey,
             fontSize: 18,
@@ -51,7 +57,8 @@ class MyApp extends StatelessWidget {
         ),
       ),   
       home: //HalamanAkun(),
-      HalamanLogin(),
+      //HalamanLogin(),
+      HalamanLapor(),
     );
   }
 }
