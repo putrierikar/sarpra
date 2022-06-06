@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sarpra/user/screens/halaman_lapor.dart';
+import 'package:http/http.dart' as http;
 
 class HalamanLogin extends StatefulWidget {
   const HalamanLogin({Key? key}) : super(key: key);
@@ -8,6 +10,8 @@ class HalamanLogin extends StatefulWidget {
 }
 
 class _HalamanLoginState extends State<HalamanLogin> {
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +72,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
             hintText: 'Ketuk untuk isi email kamu',
             hintStyle: Theme.of(context).textTheme.bodyText2,
           ),
+           controller: emailController,
         ),
         SizedBox(height: 20,),
         TextFormField(
@@ -78,6 +83,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
             hintText: 'Ketuk untuk isi password kamu',
             hintStyle: Theme.of(context).textTheme.bodyText2,
           ),
+          controller: passwordController,
         ),
         const SizedBox(height: 70,),
         Container(
@@ -90,7 +96,9 @@ class _HalamanLoginState extends State<HalamanLogin> {
                 ),
                 backgroundColor: Colors.pink,
               ),
-            onPressed: (){}, 
+            onPressed: (){
+               login();
+            }, 
             child: Text(
               'Masuk',
               style: Theme.of(context).textTheme.button,
@@ -101,4 +109,23 @@ class _HalamanLoginState extends State<HalamanLogin> {
     ),
   );
 
+  Future<void> login() async{
+    if(passwordController.text.isNotEmpty && emailController.text.isNotEmpty){
+      var response = await http.post(Uri.parse("https://reqres.in/api/login"), 
+      body:({
+        'email':emailController.text,
+        'password': passwordController.text
+        }));
+      if(response.statusCode==200){
+        Navigator.push(
+          context, MaterialPageRoute(builder: ((context) => HalamanLapor())));
+      }else{
+        ScaffoldMessenger.of(context).
+        showSnackBar(SnackBar(content: Text("Invalid Credentials")));
+      }
+    }else{
+      ScaffoldMessenger.of(context).
+      showSnackBar(SnackBar(content: Text("Black Field Not Allowed")));
+    }
+  }
 }

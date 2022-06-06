@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarpra/user/screens/halaman_login.dart';
 
 class HalamanAkun extends StatefulWidget {
 
@@ -130,7 +131,10 @@ class _HalamanAkunState extends State<HalamanAkun> {
                 side: const BorderSide(color: Colors.pink),
               ),
             ),
-            onPressed: (){}, 
+            onPressed: (){
+              Navigator.push(
+          context, MaterialPageRoute(builder: ((context) => HalamanLogin())));
+            }, 
             child: Text(
               'Keluar',
               style: Theme.of(context).textTheme.bodyText1,
