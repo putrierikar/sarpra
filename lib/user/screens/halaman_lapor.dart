@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarpra/user/user_screens.dart';
 
 class HalamanLapor extends StatefulWidget {
   const HalamanLapor({Key? key}) : super(key: key);
@@ -13,7 +14,6 @@ class _HalamanLaporState extends State<HalamanLapor> {
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          buildTop(),
           buildContent(),
           buildButton(),
           //buildBottom(),
@@ -22,15 +22,6 @@ class _HalamanLaporState extends State<HalamanLapor> {
     );
   }
 
-  Widget buildTop() => Container(
-    color: Colors.grey,
-    child: Image.asset(
-      'assets/images/Lapor.jpg',
-      height: 470,
-      width: double.infinity,
-      fit: BoxFit.cover,
-    ), 
-  );
 
 
   Widget buildContent() => Container(
@@ -67,7 +58,10 @@ class _HalamanLaporState extends State<HalamanLapor> {
                 ),
                 backgroundColor: Colors.pink,
               ),
-            onPressed: (){}, 
+            onPressed: (){
+              Navigator.push(
+          context, MaterialPageRoute(builder: ((context) => FormLapor())));
+            }, 
             child: Text(
               'LAPOR',
               style: Theme.of(context).textTheme.button,
@@ -77,5 +71,4 @@ class _HalamanLaporState extends State<HalamanLapor> {
       ],
     ),
   );
-
 }

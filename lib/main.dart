@@ -57,8 +57,7 @@ class MyApp extends StatelessWidget {
         ),
       ),   
       home: //HalamanAkun(),
-      //HalamanLogin(),
-      HalamanLogin(),
+     const HalamanLogin(),
     );
   }
 }

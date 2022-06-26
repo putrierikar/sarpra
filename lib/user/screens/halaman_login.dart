@@ -37,7 +37,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
 
 
   Widget buildContent() => Container(
-    padding: EdgeInsets.only(top: 20, left: 50),
+    padding: const EdgeInsets.only(top: 20, left: 50),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,12 +45,12 @@ class _HalamanLoginState extends State<HalamanLogin> {
           'Selamat Datang di Sobat Sarpra!',
           style: Theme.of(context).textTheme.headline3,
         ),
-        SizedBox(height: 40,),
+        const SizedBox(height: 40,),
         Text(
           'Kamu menemukan fasilitas di sekolah yang rusak?',
           style: Theme.of(context).textTheme.bodyText2,
         ),
-        SizedBox(height: 30,),
+        const SizedBox(height: 30,),
         Text(
           'Laporin ke Sobat Sarpra aja, yuk!',
           style: Theme.of(context).textTheme.bodyText2,
@@ -61,7 +61,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
 
 
   Widget buildBottom() => Container(
-    padding: EdgeInsets.only(top: 50, left: 50, right: 50),
+    padding: const EdgeInsets.only(top: 50, left: 50, right: 50),
     child: Column(
       children: [
         TextFormField(
@@ -74,7 +74,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
           ),
            controller: emailController,
         ),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         TextFormField(
           decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -118,14 +118,14 @@ class _HalamanLoginState extends State<HalamanLogin> {
         }));
       if(response.statusCode==200){
         Navigator.push(
-          context, MaterialPageRoute(builder: ((context) => HalamanLapor())));
+          context, MaterialPageRoute(builder: ((context) => const HalamanLapor())));
       }else{
         ScaffoldMessenger.of(context).
-        showSnackBar(SnackBar(content: Text("Invalid Credentials")));
+        showSnackBar(const SnackBar(content: Text("Invalid Credentials")));
       }
     }else{
       ScaffoldMessenger.of(context).
-      showSnackBar(SnackBar(content: Text("Black Field Not Allowed")));
+      showSnackBar(const SnackBar(content: Text("Black Field Not Allowed")));
     }
   }
 }

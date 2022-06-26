@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sarpra/user/screens/halaman_login.dart';
+import 'package:sarpra/user/user_screens.dart';
+
 
 class HalamanAkun extends StatefulWidget {
 
@@ -9,7 +10,7 @@ class HalamanAkun extends StatefulWidget {
 
 class _HalamanAkunState extends State<HalamanAkun> {
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   void _onItemTapped(int index){
     setState(() {
